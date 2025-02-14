@@ -42,3 +42,19 @@ public void setListener(SipAudioCall.Listener listener, boolean callbackImmediat
 ```
 
 由此可见，`callbackImmediately`参数为`false`，因此在接听电话之前，不会触发`onRinging`回调。这与官方文档中的描述不一致，开发者需要对此有所了解。
+
+### 3. SipManager 仅支持 RTP/AVP 协议。
+
+```java
+private SimpleSessionDescription createAnswer(String offerSd) {
+                ...
+            if ((codec == null) && (media.getPort() > 0)
+                    && "audio".equals(media.getType())
+                    && "RTP/AVP".equals(media.getProtocol())) {
+                ...
+                    Media reply = answer.newMedia(
+                            "audio", mAudioStream.getLocalPort(), 1, "RTP/AVP");
+                    reply.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
+                ...
+    }
+```
