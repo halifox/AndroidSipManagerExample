@@ -5,26 +5,35 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-
-
+    <TextView
+        android:id="@+id/supported"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
 
     <EditText
-        android:id="@+id/sip"
+        android:id="@+id/domain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sip:cmf1g8ra@sip.linphone.org" />
+        android:text="sip.linphone.org" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="y5poh7l1" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="y5poh7l1@linshiyouxiang.net" />
 
     <Button
-        android:id="@+id/call"
+        android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="call" />
+        android:text="register" />
 
-
-    <Button
-        android:id="@+id/unregister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="unregister" />
 
 </LinearLayout>
